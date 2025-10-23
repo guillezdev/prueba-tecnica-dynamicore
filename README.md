@@ -143,4 +143,4 @@ UI Components (Presentation)
 
 ---
 
-**Desarrollado por guillezdev con ❤️ para DynamiCore**
+**Desarrollado por [guillezdev](https://github.com/guillezdev) con ❤️ para DynamiCore**
