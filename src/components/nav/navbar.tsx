@@ -5,6 +5,7 @@ import {
   NavigationMenuItem,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
+import ThemeSwitcher from "../misc/theme-switcher";
 
 const Navbar = () => {
   const location = useLocation();
@@ -19,10 +20,9 @@ const Navbar = () => {
       href: "/dashboard",
     },
   ];
-
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
-      <div className="mx-auto flex h-14 max-w-screen-2xl justify-evenly">
+      <div className="mx-auto flex h-14 max-w-screen-2xl justify-between items-center px-4">
         <div className="flex items-center">
           <Link to="/" className="flex items-center space-x-2">
             <span className="font-bold text-lg">Prueba Técnica</span>
@@ -48,6 +48,10 @@ const Navbar = () => {
               ))}
             </NavigationMenuList>
           </NavigationMenu>
+        </div>
+
+        <div className="flex items-center">
+          <ThemeSwitcher />
         </div>
       </div>
     </header>
