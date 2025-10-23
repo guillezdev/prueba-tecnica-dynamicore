@@ -18,7 +18,7 @@ const UserList = ({ users }: UserListProps) => {
     currentPage,
     totalPages,
     totalItems,
-    rowPerPage,
+    itemsPerPage,
     handleSearch,
     handleSearchChange,
     handleSortOrderChange,
@@ -69,7 +69,7 @@ const UserList = ({ users }: UserListProps) => {
             totalPages={totalPages}
             onPageChange={handlePageChange}
             totalItems={totalItems}
-            rowPerPage={rowPerPage}
+            itemsPerPage={itemsPerPage}
           />
         </>
       )}

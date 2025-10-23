@@ -7,7 +7,7 @@ interface PaginationProps {
   totalPages: number;
   onPageChange: (page: number) => void;
   totalItems: number;
-  rowPerPage: number;
+  itemsPerPage: number;
 }
 
 const Pagination = ({
@@ -15,10 +15,10 @@ const Pagination = ({
   totalPages,
   onPageChange,
   totalItems,
-  rowPerPage,
+  itemsPerPage,
 }: PaginationProps) => {
-  const startItem = (currentPage - 1) * rowPerPage + 1;
-  const endItem = Math.min(currentPage * rowPerPage, totalItems);
+  const startItem = (currentPage - 1) * itemsPerPage + 1;
+  const endItem = Math.min(currentPage * itemsPerPage, totalItems);
 
   const generatePageNumbers = () => {
     const pages = [];

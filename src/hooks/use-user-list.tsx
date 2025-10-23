@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 
 interface UseUserListProps {
   users: User[];
-  rowPerPage?: number;
+  itemsPerPage?: number;
 }
 
-function useUserList({ users, rowPerPage = 9 }: UseUserListProps) {
+function useUserList({ users, itemsPerPage = 3 }: UseUserListProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
   const [currentSearchTerm, setCurrentSearchTerm] = useState("");
@@ -59,13 +59,13 @@ function useUserList({ users, rowPerPage = 9 }: UseUserListProps) {
   }, [users, currentSearchTerm, sortOrder]);
 
   useEffect(() => {
-    const startIndex = (currentPage - 1) * rowPerPage;
-    const endIndex = startIndex + rowPerPage;
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
     const paginated = sortedUsers.slice(startIndex, endIndex);
     setPaginatedUsers(paginated);
-  }, [sortedUsers, currentPage, rowPerPage]);
+  }, [sortedUsers, currentPage, itemsPerPage]);
 
-  const totalPages = Math.ceil(sortedUsers.length / rowPerPage);
+  const totalPages = Math.ceil(sortedUsers.length / itemsPerPage);
   return {
     sortedUsers,
     paginatedUsers,
@@ -74,7 +74,7 @@ function useUserList({ users, rowPerPage = 9 }: UseUserListProps) {
     currentPage,
     totalPages,
     totalItems: sortedUsers.length,
-    rowPerPage,
+    itemsPerPage,
     currentSearchTerm,
     handleSearch,
     handleSearchChange,
