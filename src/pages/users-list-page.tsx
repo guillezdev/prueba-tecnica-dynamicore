@@ -1,7 +1,7 @@
 import UserList from "@/components/pages/users-list/user-list";
 import { userMocks } from "@/mock/user-list-mocks";
 
-const UsersPage = () => {
+const UsersListPage = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <UserList users={userMocks} />
@@ -9,4 +9,4 @@ const UsersPage = () => {
   );
 };
 
-export default UsersPage;
+export default UsersListPage;

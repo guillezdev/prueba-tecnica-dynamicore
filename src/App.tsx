@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "@/components/nav/navbar";
-import UsersPage from "@/pages/users-page";
+import UsersListPage from "@/pages/users-list-page";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
         <Navbar />
         <main>
           <Routes>
-            <Route path="/" element={<UsersPage />} />
+            <Route path="/" element={<UsersListPage />} />
           </Routes>
         </main>
       </div>
