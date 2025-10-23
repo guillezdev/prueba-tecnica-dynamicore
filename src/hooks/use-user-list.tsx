@@ -6,7 +6,7 @@ interface UseUserListProps {
   itemsPerPage?: number;
 }
 
-function useUserList({ users, itemsPerPage = 3 }: UseUserListProps) {
+function useUserList({ users, itemsPerPage = 12 }: UseUserListProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
   const [currentSearchTerm, setCurrentSearchTerm] = useState("");
