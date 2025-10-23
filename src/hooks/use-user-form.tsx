@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { z } from "zod";
 
-// Esquema de validación con Zod
 const userFormSchema = z.object({
   name: z.string().min(1, "El nombre es requerido").trim(),
   email: z
