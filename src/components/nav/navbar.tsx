@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const navigationItems = [
     {
-      title: "Inicio",
+      title: "Lista de Usuarios",
       href: "/",
     },
     {
@@ -19,6 +19,7 @@ const Navbar = () => {
       href: "/dashboard",
     },
   ];
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
       <div className="mx-auto flex h-14 max-w-screen-2xl justify-evenly">
