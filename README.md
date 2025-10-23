@@ -2,6 +2,10 @@
 
 Una aplicación React moderna desarrollada con **TypeScript**, **Vite**, **Tailwind CSS** y **shadcn/ui** que implementa una lista de usuarios con filtros, paginación y un formulario de creación de usuarios.
 
+## 🌐 Demo en Vivo
+
+🚀 **[Ver Demo](https://dynamicore-test-demo.netlify.app/)** - Aplicación desplegada en Netlify
+
 ## 🚀 Características Implementadas
 
 ### ✅ **Tarea 1: Lista de Usuarios**
