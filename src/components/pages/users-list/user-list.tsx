@@ -1,5 +1,7 @@
 import useUserList from "@/hooks/use-user-list";
 import type { User } from "@/mock/user-list-mocks";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 interface UserListProps {
   users: User[];
@@ -17,36 +19,34 @@ const UserList = ({ users }: UserListProps) => {
       </div>
     );
   }
-
   return (
     <div className="max-w-4xl mx-auto">
       <div className="mb-6">
         <h2 className="text-2xl font-bold tracking-tight mb-2">
-          Lista de Usuarios
+          Lista de Usuarios{" "}
+          <Badge variant="secondary">{sortedUsers.length}</Badge>
         </h2>
-        <p className="text-gray-600 dark:text-gray-400">
-          {sortedUsers.length} usuarios ordenados alfabéticamente
-        </p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {sortedUsers.map((user) => (
-          <div
-            key={user.id}
-            className="bg-card text-card-foreground rounded-lg border p-4 hover:shadow-md transition-shadow"
-          >
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="font-semibold text-lg">{user.name}</h3>
-                <p className="text-sm text-muted-foreground">{user.age} años</p>
+          <Card key={user.id} className="hover:shadow-md transition-shadow">
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <div className="flex-1">
+                  <CardTitle className="text-lg">{user.name}</CardTitle>
+                  <Badge variant="outline" className="mt-2">
+                    {user.age} años
+                  </Badge>
+                </div>
+                <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span className="text-sm font-medium text-primary">
+                    {user.name.charAt(0).toUpperCase()}
+                  </span>
+                </div>
               </div>
-              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                <span className="text-sm font-medium text-primary">
-                  {user.name.charAt(0).toUpperCase()}
-                </span>
-              </div>
-            </div>
-          </div>
+            </CardHeader>
+          </Card>
         ))}
       </div>
     </div>
