@@ -11,7 +11,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<UsersListPage />} />
-            <Route path="/formulario" element={<UserFormPage />} />
+            <Route path="/form" element={<UserFormPage />} />
           </Routes>
         </main>
       </div>

@@ -20,6 +20,7 @@ import ThemeSwitcher from "../misc/theme-switcher";
 
 const Navbar = () => {
   const location = useLocation();
+
   const navigationItems = [
     {
       title: "Lista de Usuarios",
@@ -27,7 +28,7 @@ const Navbar = () => {
     },
     {
       title: "Formulario de Usuarios",
-      href: "/formulario",
+      href: "/form",
     },
   ];
 
