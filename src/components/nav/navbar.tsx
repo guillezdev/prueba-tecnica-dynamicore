@@ -9,15 +9,14 @@ import ThemeSwitcher from "../misc/theme-switcher";
 
 const Navbar = () => {
   const location = useLocation();
-
   const navigationItems = [
     {
       title: "Lista de Usuarios",
       href: "/",
     },
     {
-      title: "Dashboard",
-      href: "/dashboard",
+      title: "Formulario de Usuarios",
+      href: "/formulario",
     },
   ];
   return (
