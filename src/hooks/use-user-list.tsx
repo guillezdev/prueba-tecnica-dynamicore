@@ -1,7 +1,7 @@
-import type { User } from "@/mock/user-mocks";
+import type { User } from "@/mock/user-list-mocks";
 import { useEffect, useState } from "react";
 
-function useUser({ users }: { users: User[] }) {
+function useUserList({ users }: { users: User[] }) {
   const [sortedUsers, setSortedUsers] = useState<User[]>([]);
 
   useEffect(() => {
@@ -15,4 +15,4 @@ function useUser({ users }: { users: User[] }) {
   };
 }
 
-export default useUser;
+export default useUserList;

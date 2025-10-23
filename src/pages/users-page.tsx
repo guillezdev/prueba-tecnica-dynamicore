@@ -1,5 +1,5 @@
 import UserList from "@/components/pages/users-list/user-list";
-import { userMocks } from "@/mock/user-mocks";
+import { userMocks } from "@/mock/user-list-mocks";
 
 const UsersPage = () => {
   return (

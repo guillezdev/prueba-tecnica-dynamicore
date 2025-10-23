@@ -1,12 +1,12 @@
-import useUser from "@/hooks/use-user";
-import type { User } from "@/mock/user-mocks";
+import useUserList from "@/hooks/use-user-list";
+import type { User } from "@/mock/user-list-mocks";
 
 interface UserListProps {
   users: User[];
 }
 
 const UserList = ({ users }: UserListProps) => {
-  const { sortedUsers } = useUser({ users });
+  const { sortedUsers } = useUserList({ users });
 
   if (!users || users.length === 0) {
     return (
