@@ -1,73 +1,146 @@
-# React + TypeScript + Vite
+# Prueba Técnica para DynamiCore
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicación React moderna desarrollada con **TypeScript**, **Vite**, **Tailwind CSS** y **shadcn/ui** que implementa una lista de usuarios con filtros, paginación y un formulario de creación de usuarios.
 
-Currently, two official plugins are available:
+## 🚀 Características Implementadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### ✅ **Tarea 1: Lista de Usuarios**
+- **Componente funcional** que recibe lista de usuarios como props
+- **Ordenamiento alfabético** automático (A-Z / Z-A)
+- **Filtros avanzados** por nombre y edad
+- **Paginación** (9 usuarios por página)
+- **Búsqueda en tiempo real**
+- **Interfaz responsive** con diseño moderno
 
-## React Compiler
+### ✅ **Tarea 2: Formulario de Usuario**
+- **Hooks de estado** para manejo de datos del formulario
+- **Validación con Zod** para campos obligatorios
+- **Verificación de campos vacíos** antes de envío
+- **Visualización de datos** enviados debajo del formulario
+- **Estados de carga** y manejo de errores
+- **Componentes reutilizables** para campos de formulario
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## 🛠️ Tecnologías Utilizadas
 
-## Expanding the ESLint configuration
+- **React 19** con TypeScript
+- **Vite** para desarrollo y build
+- **Tailwind CSS** para estilos
+- **shadcn/ui** como sistema de componentes
+- **Radix UI** como primitivos base
+- **Lucide React** para iconografía
+- **Zod** para validación de formularios
+- **React Router DOM** para navegación
+- **Class Variance Authority** para variantes de componentes
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📦 Instalación y Ejecución
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerrequisitos
+- **Node.js** >= 18.0.0
+- **pnpm** (recomendado) o npm
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Pasos para ejecutar el proyecto
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. **Clonar el repositorio**
+   ```bash
+   git clone <repository-url>
+   cd prueba-tecnica
+   ```
+
+2. **Instalar dependencias**
+   ```bash
+   pnpm install
+   # o
+   npm install
+   ```
+
+3. **Ejecutar en modo desarrollo**
+   ```bash
+   pnpm dev
+   # o
+   npm run dev
+   ```
+
+4. **Abrir en el navegador**
+   ```
+   http://localhost:5173
+   ```
+
+### Scripts Disponibles
+
+```bash
+# Desarrollo
+pnpm dev          # Inicia el servidor de desarrollo
+
+# Producción
+pnpm build        # Construye la aplicación para producción
+pnpm preview      # Preview de la build de producción
+
+# Calidad de código
+pnpm lint         # Ejecuta ESLint para revisar el código
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📁 Organización de Carpetas
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── components/           # Componentes reutilizables
+│   ├── ui/              # 🎨 Componentes primitivos de shadcn/ui
+│   │   ├── button.tsx   # Botones base del design system
+│   │   ├── input.tsx    # Inputs base del design system
+│   │   ├── card.tsx     # Cards base del design system
+│   │   ├── badge.tsx    # Badges base del design system
+│   │   └── ...          # Otros primitivos de UI
+│   ├── form/            # Componentes relacionados con formularios
+│   │   └── form-field.tsx
+│   ├── nav/             # Componentes de navegación
+│   │   └── navbar.tsx
+│   ├── misc/            # Componentes misceláneos
+│   │   └── theme-switcher.tsx
+│   └── pages/           # Componentes específicos de páginas
+│       ├── users-list/  # Componentes de la lista de usuarios
+│       └── users-form/  # Componentes del formulario
+├── hooks/               # 🎣 Custom hooks para lógica de negocio
+│   ├── use-user-list.tsx   # Hook para manejo de lista de usuarios
+│   └── use-user-form.tsx   # Hook para manejo de formularios
+├── pages/               # 📄 Páginas principales de la aplicación
+│   ├── users-list-page.tsx
+│   └── user-form-page.tsx
+├── mock/                # 📊 Datos de prueba y mocks
+│   └── user-list-mocks.ts
+├── lib/                 # 🔧 Utilidades y configuraciones
+│   └── utils.ts
+└── assets/              # 🎨 Recursos estáticos
+```
+
+### 🎨 **Componentes UI (shadcn/ui)**
+
+La carpeta `src/components/ui/` contiene todos los **componentes primitivos** del design system basados en shadcn/ui:
+
+- **Propósito**: Componentes base reutilizables y consistentes
+- **Características**: 
+  - Basados en Radix UI primitives
+  - Completamente tipados con TypeScript
+  - Variantes configurables con CVA
+  - Accesibilidad integrada
+  - Temas claro/oscuro incluidos
+
+### 🎣 **Custom Hooks**
+
+Los hooks personalizados encapsulan la lógica de negocio:
+
+- **`use-user-list.tsx`**: Maneja filtrado, ordenamiento y paginación
+- **`use-user-form.tsx`**: Maneja estado del formulario y validación con Zod
+
+### 📱 **Arquitectura de Componentes**
+
+```
+Page Components (Container)
+    ↓
+Feature Components (Business Logic)
+    ↓
+UI Components (Presentation)
+```
+
+---
+
+**Desarrollado por guillezdev con ❤️ para DynamiCore**

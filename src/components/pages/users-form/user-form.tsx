@@ -66,7 +66,7 @@ const UserForm = () => {
                     Enviando...
                   </>
                 ) : (
-                  "Enviar Datos"
+                  "Enviar"
                 )}
               </Button>
               <Button

@@ -9,6 +9,7 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerTitle,
+  DrawerDescription,
   DrawerTrigger,
   DrawerClose,
 } from "@/components/ui/drawer";
@@ -33,14 +34,12 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
       <div className="mx-auto flex h-14 max-w-screen-2xl justify-between items-center px-4">
-        {/* Logo/Título a la izquierda */}
         <div className="flex items-center">
           <Link to="/" className="flex items-center space-x-2">
             <span className="font-bold text-lg">Prueba Técnica</span>
           </Link>
         </div>
 
-        {/* Links centrados - Solo visible en desktop */}
         <div className="hidden md:flex justify-center">
           <NavigationMenu>
             <NavigationMenuList>
@@ -62,12 +61,9 @@ const Navbar = () => {
           </NavigationMenu>
         </div>
 
-        {/* Sección derecha */}
         <div className="flex items-center gap-2">
-          {/* Theme Switcher - Siempre visible */}
           <ThemeSwitcher />
 
-          {/* Mobile Menu Drawer - Solo visible en mobile */}
           <div className="md:hidden">
             <Drawer direction="right">
               <DrawerTrigger asChild>
@@ -77,7 +73,12 @@ const Navbar = () => {
               </DrawerTrigger>
               <DrawerContent>
                 <DrawerHeader className="flex flex-row items-center justify-between">
-                  <DrawerTitle>Navegación</DrawerTitle>
+                  <div>
+                    <DrawerTitle className="">Navegación</DrawerTitle>
+                    <DrawerDescription className="sr-only">
+                      Menú de navegación de la aplicación
+                    </DrawerDescription>
+                  </div>
                   <DrawerClose asChild>
                     <Button
                       variant="ghost"
